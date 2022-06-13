@@ -16,7 +16,7 @@ export const getUsers = async (req: Request, res: Response) => {
       take: hasta,
     });
 
-    const count = await User.findAndCount();
+    const count = await User.count();
 
     return res.status(200).json({
       count,

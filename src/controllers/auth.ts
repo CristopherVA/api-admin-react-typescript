@@ -29,7 +29,7 @@ export const login = async (req: Request, res: Response) => {
   // GenerarJWT 
   const token = await generarJWT(user?.id as number, user?.name as string, )
 
-  res.status(200).json({
+  return res.status(200).json({
     ok: true,
     msg: `Success!`,
     id: user?.id,
