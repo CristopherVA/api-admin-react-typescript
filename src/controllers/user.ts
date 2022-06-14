@@ -127,8 +127,6 @@ export const updateUser = async (req: Request, res: Response) => {
     gender,
     address,
     telephone,
-    email,
-    password,
     civilStatu,
     haveChild,
     dateBirth,
@@ -145,9 +143,9 @@ export const updateUser = async (req: Request, res: Response) => {
       });
     }
 
-    const salt = bcrypt.genSaltSync(10);
-    const passwordUpdate = (user.password =
-      bcrypt.hashSync(password, salt) || "");
+    // const salt = bcrypt.genSaltSync(10);
+    // const passwordUpdate = (user.password =
+    //   bcrypt.hashSync(password, salt) || "");
 
     await User.update(
       { id: userId },
@@ -160,8 +158,6 @@ export const updateUser = async (req: Request, res: Response) => {
         gender,
         address,
         telephone,
-        email,
-        password: passwordUpdate,
         civilStatu,
         haveChild,
         dateBirth,
