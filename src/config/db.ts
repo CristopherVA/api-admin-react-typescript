@@ -15,8 +15,7 @@ const AppDataSource = new DataSource({
     entities: [User],
     logging: true,
     synchronize: true,
-    ssl: true
-    
+    ssl: true,
 })
 
 export const database = () => {
